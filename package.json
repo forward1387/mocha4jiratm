@@ -1,6 +1,6 @@
 {
   "name": "mocha4jiratm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "mocha test results integration with Jira TM Plugin",
   "main": "index.js",
   "scripts": {

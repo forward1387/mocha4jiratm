@@ -49,9 +49,6 @@ let getTestExecutionBody = () => {
 
 class MyReporter {
   constructor(runner) {
-    console.log(process.env.API_KEY);
-    console.log(process.env.JIRA_PROJECT_KEY);
-    console.log(process.env.JIRA_TEST_CYCLE_KEY);
 
     if (process.env.JTM_ENABLED && JSON.parse(process.env.JTM_ENABLED) === true) {
       let errors = [];
@@ -72,7 +69,6 @@ class MyReporter {
           }
 
           errors = [];
-          console.dir(body);
           return superagent
             .post('https://api.adaptavist.io/tm4j/v2/testexecutions')
             .set('Authorization', `Bearer ${process.env.API_KEY}`)
