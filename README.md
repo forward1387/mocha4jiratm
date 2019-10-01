@@ -1,1 +1,8 @@
 # mocha4jiratm
+
+## Env variable
+* JIRA_PROJECT_KEY
+* JIRA_TEST_CYCLE_KEY
+* JTM_ENABLED
+* ASSIGNED_TO_ID
+* API_KEY
