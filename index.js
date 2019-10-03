@@ -60,15 +60,15 @@ class MyReporter {
         if (match !== null) {
           let body = getTestExecutionBody();
           body['testCaseKey'] = match[1];
-          body['comment'] = JSON.stringify(errors);
+          body['statusName'] = 'Pass';
 
-          for (let ts of suite.tests) {
-            if (ts.state === 'failed') {
-              body['statusName'] = 'Fail';
-            }
+          if(errors.length > 0) {
+            body['statusName'] = 'Fail';
+            body['comment'] = JSON.stringify(errors);
           }
 
           errors = [];
+
           return superagent
             .post('https://api.adaptavist.io/tm4j/v2/testexecutions')
             .set('Authorization', `Bearer ${process.env.API_KEY}`)
